@@ -3,9 +3,10 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-    return (0);
+	printf("Holberton School");
+	return (0);
 }
