@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * main - Entry point of the program
- *
- * Return: Always 0
- */
+* print_alphabet -carries the main codes of the function
+*
+* Return: Always 0
+*/
 void print_alphabet(void)
 {
 	char a;
