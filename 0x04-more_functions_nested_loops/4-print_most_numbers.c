@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_numbers - print decimals
+ * print_most_numbers - print decimals
  *
  * Return: No value
  */
@@ -12,7 +12,9 @@ void print_most_numbers(void)
 	for (i = 0; i < 10; i++)
 	{
 		if (i == 2 || i == 4)
+		{
 			continue;
+		}
 		_putchar(i + '0');
 	}
 	_putchar('\n');
