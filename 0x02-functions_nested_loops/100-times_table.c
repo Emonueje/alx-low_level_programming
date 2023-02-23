@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -34,15 +35,12 @@ void print_times_table(int n)
 				{
 					_putchar(' ');
 					_putchar(' ');
-					_putchar((k / 10) + '0');
-					_putchar((k % 10) + '0');
+					printf("%d",  k);
 				}
 				else if (k > 99)
 				{
 					_putchar(' ');
-					_putchar(((k / 10) / 10) + '0');
-					_putchar(((k / 10) % 10) + '0');
-					_putchar((k % 10) + '0');
+					printf("%d", k);
 				}
 			}
 			_putchar('\n');
