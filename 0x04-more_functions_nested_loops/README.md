@@ -1,4 +1,4 @@
-#Project 0x04. C-More Functions, More nested loops
+# Project 0x04. C-More Functions, More nested loops
 I have been introduced to functions and nested loops in an earlier project 
 This project is to help me master the flow process of programs and to help 
 me practice writing program function.
