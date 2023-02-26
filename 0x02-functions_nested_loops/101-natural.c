@@ -12,7 +12,7 @@ int main(void)
 	int iteration_value;
 	int summation = 0;
 
-	for (iteration_value = 0; iteration_value < 10; iteration_value++)
+	for (iteration_value = 0; iteration_value < inp; iteration_value++)
 	{
 		if ((iteration_value % 3 == 0) || (iteration_value % 5 == 0))
 		{
