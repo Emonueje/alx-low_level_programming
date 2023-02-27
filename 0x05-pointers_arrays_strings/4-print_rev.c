@@ -9,13 +9,19 @@ void print_rev(char *s)
 {
 	int i, j, count;
 
-	for (i = 0; *(s + i) != 0; i++)
+	if (*s == 0)
 	{
-		count = i;
+		_putchar(' ');
 	}
-	for (j = count; *(s + j) != 0; j--)
-	{
-		_putchar(*(s + j));
+	else
+	{	for (i = 0; *(s + i) != 0; i++)
+		{
+			count = i;
+		}
+		for (j = count; *(s + j) != 0; j--)
+		{
+			_putchar(*(s + j));
+		}
 	}
 	_putchar('\n');
 }
