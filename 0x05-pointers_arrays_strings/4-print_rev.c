@@ -11,10 +11,11 @@ void print_rev(char *s)
 
 	if (*s == 0)
 	{
-		_putchar(' ');
+		_putchar('\n');
 	}
 	else
-	{	for (i = 0; *(s + i) != 0; i++)
+	{
+		for (i = 0; *(s + i) != 0; i++)
 		{
 			count = i;
 		}
@@ -22,6 +23,6 @@ void print_rev(char *s)
 		{
 			_putchar(*(s + j));
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
