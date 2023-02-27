@@ -9,6 +9,8 @@ void print_rev(char *s)
 {
 	int i, j, count;
 
+	if (*(s + 0) == 0)
+		return (0);
 	for (i = 0; *(s + i) != 0; i++)
 	{
 		count = i;
