@@ -7,21 +7,17 @@
  */
 void rev_string(char *s)
 {
-	int i, j, count, k;
-	char a[1000];
+	char rev = s[0];
+	int count = 0;
+	int iteration;
 
-	for (i = 0; *(s + i) != 0; i++)
+	while(s[count] != '\0')
+		count++;
+	for (iteration = 0; iteration < count; iteration++)
 	{
-		count = i;
-	}
-	s = *(a + 0);
-	for (j = count; *(s + j) != 0; j--)
-	{
-		for (k = 0; k <= count; k++)
-		{
-
-			 *(a + k) = *(s + j);
-			 s = s + *(a + k);
-		}
+		count--;
+		rev = s[iteration];
+		s[iteration] = s[count];
+		s[count] = rev;
 	}
 }
