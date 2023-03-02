@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * cap_string - Capitalizes all words of a string.
@@ -6,34 +7,26 @@
  *
  * Return: A pointer to the changed string.
  */
-char *cap_string(char *str)
+char *cap_string(char *n)
 {
-	int index = 0;
+	int len, i, j;
+	char *c;
 
-	while (str[index])
+	c = ",;.!?\"(){} \n\t";
+	len = strlen(n);
+	for (i = 0; i < len; i++)
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
-
-		if (str[index - 1] == ' ' ||
-		    str[index - 1] == '\t' ||
-		    str[index - 1] == '\n' ||
-		    str[index - 1] == ',' ||
-		    str[index - 1] == ';' ||
-		    str[index - 1] == '.' ||
-		    str[index - 1] == '!' ||
-		    str[index - 1] == '?' ||
-		    str[index - 1] == '"' ||
-		    str[index - 1] == '(' ||
-		    str[index - 1] == ')' ||
-		    str[index - 1] == '{' ||
-		    str[index - 1] == '}' ||
-		    index == 0)
-			str[index] -= 32;
-
-		index++;
+		j = 0;
+		while (c[j])
+		{
+			if (n[i - 1] == c[j] && (n[i] > 96 && n[i] < 122))
+			{
+				if (n[i-1] == '\t')
+					n[i -1] = ' ';
+				n[i] -= 32;
+			}
+			j++;
+		}
 	}
-
-	return (str);
+	return (n);
 }
-
