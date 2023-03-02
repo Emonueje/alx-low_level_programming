@@ -21,8 +21,8 @@ char *cap_string(char *n)
 		{
 			if (n[i - 1] == c[j] && (n[i] > 96 && n[i] < 122))
 			{
-				if (n[i-1] == '\t')
-					n[i -1] = ' ';
+				if (n[i - 1] == '\t')
+					n[i - 1] = ' ';
 				n[i] -= 32;
 			}
 			j++;
