@@ -12,17 +12,18 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int a, b, c, i, len_a, len_b, len_tmp;
-	char tmp[1000];
+	int i, len_a, len_b, len_tmp;
+	long int a, b, c;
+	char tmp[10000];
 
-	len_a = strlen(n1);
-	len_b = strlen(n2);
+	len_a = strlen(n1) - 1;
+	len_b = strlen(n2) - 1;
 	if (len_a >= size_r || len_b >= size_r)
 		return (0);
-	a = atoi(n1);
-	b = atoi(n2);
+	a = atol(n1);
+	b = atol(n2);
 	c = a + b;
-	sprintf(tmp, "%d", c);
+	sprintf(tmp, "%ld", c);
 	len_tmp = strlen(tmp);
 	if (len_tmp >= size_r)
 		return (0);
