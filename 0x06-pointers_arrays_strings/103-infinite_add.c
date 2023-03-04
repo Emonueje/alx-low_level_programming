@@ -32,6 +32,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[i] = tmp[i];
 		i++;
 	}
-	r[size_r] = '\0';;
+	r[size_r] = '\0';
 	return (r);
 }
