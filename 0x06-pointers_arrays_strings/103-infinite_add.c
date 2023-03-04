@@ -10,6 +10,20 @@
  * @size_r: size of the buffer
  * Return: Pointer to s
  */
+long int stringToInt(char *str)
+{
+	int i;
+	long int sum = 0;
+
+	i = 0;
+	while(str[i])
+	{
+		sum += sum * 10 + str[i] - '0';
+		i++;
+	}
+	return (sum);
+}
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i, len_a, len_b, len_tmp;
@@ -20,8 +34,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	len_b = strlen(n2) - 1;
 	if (len_a >= size_r || len_b >= size_r)
 		return (0);
-	a = atol(n1);
-	b = atol(n2);
+	a = stringToInt(n1);
+	b = stringToInt(n2);
+	printf("%ld\n%ld", a, b);
 	c = a + b;
 	sprintf(tmp, "%ld", c);
 	len_tmp = strlen(tmp);
