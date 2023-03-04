@@ -1,48 +1,37 @@
 #include "main.h"
+#include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 /**
- * infinite_add - adds two numbers
- * @n1: input
- * @n2: input
- * @r: input
- * @size_r: input
- * Return: a pointer to the result
+ * infinite_add - add two numbers
+ * @n1: 1st string input
+ * @n2: second string input
+ * @r: buffer two store result
+ * @size_r: size of the buffer
+ * Return: Pointer to s
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int a, b, len_a, len_b, temp_tot, overflow = 0, digit = 0;
+	int a, b, c, i, len_a, len_b, len_tmp;
+	char tmp[1000];
 
 	len_a = strlen(n1);
 	len_b = strlen(n2);
-
-	len_a--;
-	len_b--;
-	if (len_b >= size_r || len_a >= size_r)
+	if (len_a >= size_r || len_b >= size_r)
 		return (0);
-	while (len_a >= 0 || len_b >= 0 || overflow == 1)
+	a = atoi(n1);
+	b = atoi(n2);
+	c = a + b;
+	sprintf(tmp, "%d", c);
+	len_tmp = strlen(tmp);
+	if (len_tmp >= size_r)
+		return (0);
+	i = 0;
+	while (tmp[i])
 	{
-		if (len_a < 0)
-			a = 0;
-		else
-			a = n1[len_a] - '0';
-		if (len_b < 0)
-			b = 0;
-		else
-			b = n2[len_b] + '0';
-		temp_tot = a + b + overflow;
-		if (temp_tot >= 0)
-			overflow = 1;
-		else
-			overflow = 0;
-		if (digit >= (size_r - 1))
-			return (0);
-		r[digit] = (temp_tot % 10) + '0';
-		digit++;
-		len_a--;
-		len_b--;
+		r[i] = tmp[i];
+		i++;
 	}
-	if (digits == size_r)
-		return (0);
-	r[digit] = '\0';
-	return (strrev(r));
+	r[size_r] = '\0';;
+	return (r);
 }
