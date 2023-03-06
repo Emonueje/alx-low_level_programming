@@ -11,12 +11,16 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i, check = 0;
+	int j;
 
 	i = 0;
-	while (isalpha(s[i]))
+	while (s[i] != 32)
 	{
-		if (strcmp(s, accept))
-			check += 1;
+		for (j = 0; accept[j]; j++)
+		{
+			if (s[i] == accept[j])
+				check += 1;
+		}
 		i++;
 	}
 	return (check);
