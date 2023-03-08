@@ -12,13 +12,9 @@ int getprime(int num, int tmp)
 		return (0);
 	if (num == tmp)
 		return (1);
-	else
-	{
-		if (num % tmp == 0)
-			return (0);
-		else
-			return (getprime(num, tmp + 1));
-	}
+	else if (num % tmp == 0)
+		return (0);
+	return (getprime(num, tmp + 1));
 }
 
 /**
