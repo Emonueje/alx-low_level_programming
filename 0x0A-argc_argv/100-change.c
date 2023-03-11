@@ -37,7 +37,7 @@ int _isnumber(char *s)
  */
 int main(int argc, char **argv)
 {
-	int j, turn, coins, cents, don;
+	int j, turn, coins, cents, done;
 	int c[5] = {25, 10, 5, 2, 1};
 
 	turn = 1, j = 0, coins = 0;
