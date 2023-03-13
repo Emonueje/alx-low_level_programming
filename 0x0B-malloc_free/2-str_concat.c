@@ -14,15 +14,15 @@ char *str_concat(char *s1, char *s2)
 {
 	int i, j, len;
 	char *mystr;
+	char *null = "";
+
 
 	if (s1 == NULL || s2 == NULL)
 	{
 		if (s1 == NULL)
-			return (s2);
+			s1 = null;
 		if (s2 == NULL)
-			return (s1);
-		if (s1 == NULL && s2 == NULL)
-			return (s1);
+			s2 = null;
 	}
 	len = strlen(s1) + strlen(s2);
 	len++;
