@@ -11,20 +11,22 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int i, j;
-	int **arr;
+	int i, j, len, gridElement = 0;
+	int **arr, *ptr;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	arr = malloc(sizeof(int*) * (height * width));
+	len = sizeof(int *) * height + sizeof(int) * (height * width);
+	arr = (int **)malloc(len);
 	if (arr == NULL)
 		return (NULL);
+	ptr = (int *)(arr + height);
+	for (i = 0; i < height; i++)
+		arr[i] = (ptr + width * i);
 	for (i = 0; i < height; i++)
 	{
-		for (j = 0; i < width; j++)
-		{
-			*arr[j] = 0;
-		}
+		for (j = 0; j < width; j++)
+			arr[i][j] = gridElement;
 	}
 	return (arr);
 }
